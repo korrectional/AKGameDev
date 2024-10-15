@@ -13,7 +13,7 @@ Godot tutorial: https://youtu.be/LOhfqjmasi0?si=yhpu9gaziWgzCVbm&t=290 (you can 
 If you think you understand this, you can begin the "platform" challenge.
 
 
-[[[[[[[[[[[[[[[[[[[[
+```
     XP system (how good you are): You need xp to unlock certain challenges and jams, and you earn xp by completing those (how much you get from one is
     indicated with a trace. Ex: platform - 100).
 
@@ -23,22 +23,21 @@ If you think you understand this, you can begin the "platform" challenge.
     How Jams work: At the start of a meeting, if there is enough people that wish to participate in the jam, you will begin working. 
     Different jams have different time limits. Some might span 40 minutes while others can take weeks to complete. If you do better than other people in
     the jam you get a lot of xp.
-]]]]]]]]]]]]]]]]]]]]
+```
 
+#Challenges:
 
-Challenges:
-
-# platform - 100
+### platform - 100
 Make a simple platformer, where you can collect coins and jump over things.
 
-# bun guns - 130
+### bun guns - 130
 Make a game where you have a gun that shoots buns, and when a target gets in contact with the bun it gets destroyed.
 
 
 
-Jams!!!:
+# Jams!!!:
 
 (100xp required to unlock)
-# nerdrun - 200 
+### nerdrun - 200 
 This is one of the few Jams you will have to do by yourself. Your goal is to make a hopefully but at least mildly entertaining game in 40 minutes (the span of the meeting).
 It can be very simple, like the platform game from the challenge, but you gotta rush.

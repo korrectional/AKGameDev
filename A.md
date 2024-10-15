@@ -5,7 +5,8 @@ https://gdquest.itch.io/learn-godot-gdscript
 
 After that, you are almost set, now you just need to prove yourself. If you pass in the next single A challenge you get upgraded to AA.
 
-[[[[[[[[[[[[[[[[[[[[
+```
+
     XP system (how good you are): You need xp to unlock certain challenges and jams, and you earn xp by completing those (how much you get from one is
     indicated with a trace. Ex: platform - 100).
 
@@ -15,11 +16,12 @@ After that, you are almost set, now you just need to prove yourself. If you pass
     How Jams work: At the start of a meeting, if there is enough people that wish to participate in the jam, you will begin working. 
     Different jams have different time limits. Some might span 40 minutes while others can take weeks to complete. If you do better than other people in
     the jam you get a lot of xp.
-]]]]]]]]]]]]]]]]]]]]
+
+```
 BUT YOU WONT GET ANY XP!!! That's because we want you to get the **** out of A! The only good thing is that as soon as you enter A you get 100 xp right away. 
 
 
-The challenge:
+### The challenge:
  - Guess what, there is not much of a way to test your knowledge since you can't use godot yet, so here's a stupid challenge:
    At the end of lesson 17 there is a practice called "improving code with a for loop". Get rid of that code and make a program
    that draws a shape, and it progressively gets bigger and bigger. 
