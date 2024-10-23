@@ -18,12 +18,19 @@ Note that some challenges from AA reappear here. Don't do them since that would 
 ### bun guns - 130
 Make a game where you have a gun that shoots buns, and when a target gets in contact with the bun it gets destroyed.
 
+### music - 140
+Make a game thats focused around audio.
+
 ### fake 2d subway surfers - 150
 In the ancient times people like to play subway surfers. Now your job is to disapoint everybody by making a fake 2d version of it. Good luck.
 
 
-
 # Jams!!!:
+
+### kickstart! - 200
+This is a begginer jam tht we will all start together. Basically, you should get make a team or by yourself make a game of your choice (or your team's). We'll
+let you know more about it during the meeting.
+
 
 (100xp required to unlock)
 ### nerdrun - 200 

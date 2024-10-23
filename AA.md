@@ -33,9 +33,16 @@ Make a simple platformer, where you can collect coins and jump over things.
 ### bun guns - 130
 Make a game where you have a gun that shoots buns, and when a target gets in contact with the bun it gets destroyed.
 
+### music - 140
+Make a game thats focused around audio.
+
 
 
 # Jams!!!:
+
+### kickstart! - 200
+This is a begginer jam tht we will all start together. Basically, you should get make a team or by yourself make a game of your choice (or your team's). We'll
+let you know more about it during the meeting.
 
 (100xp required to unlock)
 ### nerdrun - 200 
