@@ -1,16 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://dndws6j2yqxg5"]
+[gd_scene load_steps=5 format=3 uid="uid://dndws6j2yqxg5"]
 
 [ext_resource type="Texture2D" uid="uid://bqk1vq2hwlusk" path="res://assets/icon.svg" id="1_4f7q8"]
+[ext_resource type="Script" path="res://scripts/player-movement.gd" id="2_bebkb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_54j2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gojqo"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 123.0
-offset_top = 27.0
-offset_right = 623.0
-offset_bottom = 286.0
+offset_left = 76.0
+offset_top = 24.0
+offset_right = 576.0
+offset_bottom = 283.0
 text = "HEY THIS IS THE PROJECT"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+use_default_word_separators = false
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(509, 160)
+position = Vector2(192, 136)
 texture = ExtResource("1_4f7q8")
+
+[node name="player" type="Node2D" parent="."]
+
+[node name="player" type="CharacterBody2D" parent="player"]
+script = ExtResource("2_bebkb")
+
+[node name="Camera2D" type="Camera2D" parent="player/player"]
+
+[node name="Mesh" type="MeshInstance2D" parent="player/player"]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_54j2s")
+
+[node name="Collision" type="CollisionShape2D" parent="player/player"]
+shape = SubResource("RectangleShape2D_gojqo")
