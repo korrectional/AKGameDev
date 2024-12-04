@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dndws6j2yqxg5"]
+
+[ext_resource type="Texture2D" uid="uid://bqk1vq2hwlusk" path="res://assets/icon.svg" id="1_4f7q8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 123.0
+offset_top = 27.0
+offset_right = 623.0
+offset_bottom = 286.0
+text = "HEY THIS IS THE PROJECT"
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(509, 160)
+texture = ExtResource("1_4f7q8")

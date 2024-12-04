@@ -1,0 +1,15 @@
+# Godot 4+ specific ignores
+/akgamedev-project/.godot/
+
+# Godot-specific ignores
+/akgamedev-project/.import/
+/akgamedev-project/export.cfg
+/akgamedev-project/export_presets.cfg
+
+# Imported translations (automatically generated from CSV files)
+/akgamedev-project/*.translation
+
+# Mono-specific ignores
+/akgamedev-project/.mono/
+/akgamedev-project/data_*/
+/akgamedev-project/mono_crash.*.json
