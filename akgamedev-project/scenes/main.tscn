@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dndws6j2yqxg5"]
+[gd_scene load_steps=7 format=3 uid="uid://dndws6j2yqxg5"]
 
 [ext_resource type="Texture2D" uid="uid://bqk1vq2hwlusk" path="res://assets/icon.svg" id="1_4f7q8"]
 [ext_resource type="Script" path="res://scripts/player-movement.gd" id="2_bebkb"]
+[ext_resource type="PackedScene" uid="uid://orebfkp8xq8n" path="res://scenes/locker.tscn" id="2_wg5gv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_54j2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04oeg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gojqo"]
 
@@ -29,9 +32,13 @@ use_default_word_separators = false
 position = Vector2(192, 136)
 texture = ExtResource("1_4f7q8")
 
-[node name="player" type="Node2D" parent="."]
+[node name="Locker" parent="." instance=ExtResource("2_wg5gv")]
+position = Vector2(44, 1)
+
+[node name="player" type="Node2D" parent="." groups=["player"]]
 
 [node name="player" type="CharacterBody2D" parent="player"]
+collision_mask = 2
 script = ExtResource("2_bebkb")
 
 [node name="Camera2D" type="Camera2D" parent="player/player"]
@@ -41,4 +48,17 @@ scale = Vector2(20, 20)
 mesh = SubResource("BoxMesh_54j2s")
 
 [node name="Collision" type="CollisionShape2D" parent="player/player"]
+shape = SubResource("RectangleShape2D_04oeg")
+
+[node name="Hitbox" type="Area2D" parent="player/player"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/player/Hitbox"]
 shape = SubResource("RectangleShape2D_gojqo")
+
+[node name="TextEdit" type="TextEdit" parent="player/player"]
+offset_left = -83.0
+offset_top = 278.0
+offset_right = 82.0
+offset_bottom = 315.0
+text = "Press space to enter"
