@@ -4,6 +4,7 @@ extends CharacterBody2D
 <<<<<<< HEAD
 const SPEED = 350.0
 =======
+const SPEED = 400.0
 >>>>>>> 12e67743c46d054ab8822c39299643f9c8e80b99
 
 
