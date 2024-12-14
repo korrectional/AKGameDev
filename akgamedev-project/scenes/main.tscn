@@ -57,6 +57,7 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_gojqo")
 
 [node name="TextEdit" type="TextEdit" parent="player/player"]
+visible = false
 offset_left = -83.0
 offset_top = 278.0
 offset_right = 82.0
