@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjra0wfefoqxl"]
+
+[ext_resource type="Script" path="res://scripts/Teacher_movements.gd" id="1_024go"]
+[ext_resource type="Texture2D" uid="uid://bqk1vq2hwlusk" path="res://assets/icon.svg" id="2_l5l6p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5r3h"]
+size = Vector2(120, 122)
+
+[sub_resource type="Curve2D" id="Curve2D_eh1ff"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 313, -89, 0, 0, 0, 0, 768, 95, 0, 0, 0, 0, 1139, -96)
+}
+point_count = 3
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_024go")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -5)
+shape = SubResource("RectangleShape2D_d5r3h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.05176e-05, -7.62939e-06)
+texture = ExtResource("2_l5l6p")
+
+[node name="path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_eh1ff")
+
+[node name="position_of_object" type="PathFollow2D" parent="path"]
+position = Vector2(313, -89)
+rotation = 0.38429
