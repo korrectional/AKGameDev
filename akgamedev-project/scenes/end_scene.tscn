@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd3iedrao2f3y"]
+
+[ext_resource type="Script" path="res://scripts/end_scene.gd" id="1_0iuu1"]
+[ext_resource type="Texture2D" uid="uid://rx0oap8n8647" path="res://assets/Top_down.png" id="2_ygceg"]
+[ext_resource type="Texture2D" uid="uid://bqk1vq2hwlusk" path="res://assets/icon.svg" id="3_i8ftn"]
+
+[node name="end" type="Node2D"]
+script = ExtResource("1_0iuu1")
+
+[node name="ScreenshotFrom2024-12-1320-32-55" type="Sprite2D" parent="."]
+position = Vector2(460, 373)
+texture = ExtResource("2_ygceg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(426, 703)
+scale = Vector2(0.5625, 0.664062)
+texture = ExtResource("3_i8ftn")
