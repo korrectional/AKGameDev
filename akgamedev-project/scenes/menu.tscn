@@ -1,0 +1,140 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgewq68of7wkw"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_taq5r"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_taq5r")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.749556
+anchor_right = 0.7
+anchor_bottom = 0.961556
+offset_left = -0.00805664
+offset_top = 0.287994
+offset_right = 0.536011
+offset_bottom = -0.0880127
+
+[node name="Play" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Play"
+
+[node name="Settings" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Settings"
+
+[node name="Quit" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0204722
+anchor_top = 0.0328272
+anchor_right = 0.981688
+anchor_bottom = 0.240432
+offset_left = 0.415998
+offset_top = -0.272001
+offset_right = 0.0960007
+offset_bottom = 0.199997
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.147999
+offset_bottom = 0.0499992
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.842954, 0.436035, 0.606852, 1)
+theme_override_font_sizes/font_size = 86
+text = "Escape schooool??"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.277778
+anchor_top = 0.182099
+anchor_right = 0.725104
+anchor_bottom = 0.821259
+offset_right = -0.32
+offset_bottom = -0.176003
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.384003
+offset_bottom = -0.144012
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.277331
+anchor_top = 0.100743
+anchor_right = 0.724508
+anchor_bottom = 0.175649
+offset_left = 0.408136
+offset_top = -0.267273
+offset_right = 0.0881348
+offset_bottom = 0.204727
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Settings/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.147999
+offset_bottom = 0.0499992
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.842954, 0.436035, 0.606852, 1)
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BackSettings" type="Button" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 347.0
+offset_top = 533.0
+offset_right = 807.0
+offset_bottom = 576.0
+theme_override_font_sizes/font_size = 25
+text = "Settings"
+
+[connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
