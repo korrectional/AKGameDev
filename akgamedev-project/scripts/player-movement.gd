@@ -10,7 +10,6 @@ func _physics_process(_delta: float) -> void:
 	
 	if(locker_delay<locker_max): # temporary thing to stop people from locker spamming
 		locker_delay+=1;
-	print(locker_delay)
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i).get_collider().name #detects what object the player is colliding with
@@ -21,7 +20,6 @@ func _physics_process(_delta: float) -> void:
 				stuck = true
 				locker_delay = 0
 				
-	print(visible)
 	
 	if(stuck):
 		if Input.is_action_just_pressed("interact") and locker_delay==locker_max:
