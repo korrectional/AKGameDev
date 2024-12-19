@@ -1,8 +1,9 @@
 extends Area2D
 
-const SPEED = 250.0
+var SPEED = 250.0
 var behind_locker = false
-var spaceOn = false		#To make sure you cant enter and exit a locker by holding down space
+var spaceOn = false	
+var is_energy_taken = false
 @export var locker_instructions: TextEdit	#Textbox for the instructions (TODO: change from using visible to manipulating the inner text)
 @export var spawnPoints: Node2D
 
