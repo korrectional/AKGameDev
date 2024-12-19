@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://dndws6j2yqxg5"]
+[gd_scene load_steps=7 format=3 uid="uid://dndws6j2yqxg5"]
 
-[ext_resource type="Texture2D" uid="uid://bqk1vq2hwlusk" path="res://assets/icon.svg" id="1_4f7q8"]
 [ext_resource type="PackedScene" uid="uid://gskpj3om1n0q" path="res://scenes/teacher_test_1.tscn" id="3_rrihi"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_7v3d6"]
 
@@ -16,26 +15,6 @@ size = Vector2(20, 42)
 [node name="Node2D" type="Node2D"]
 position = Vector2(3, 16)
 
-[node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 76.0
-offset_top = 24.0
-offset_right = 576.0
-offset_bottom = 283.0
-text = "HEY THIS IS THE PROJECT"
-editable = false
-context_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-use_default_word_separators = false
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(192, 136)
-texture = ExtResource("1_4f7q8")
-
 [node name="Locker" type="Area2D" parent="." groups=["Lockers"]]
 modulate = Color(0.487242, 0.0577397, 0.189952, 1)
 position = Vector2(-3, -16)
@@ -48,10 +27,11 @@ mesh = SubResource("QuadMesh_dvr10")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Locker"]
 shape = SubResource("RectangleShape2D_kmsb1")
 
-[node name="Player" type="Area2D" parent="." node_paths=PackedStringArray("locker_instructions")]
+[node name="Player" type="Area2D" parent="." node_paths=PackedStringArray("locker_instructions", "spawnPoints")]
 position = Vector2(-57, -6)
 script = ExtResource("4_7v3d6")
 locker_instructions = NodePath("TextEdit")
+spawnPoints = NodePath("../SpawnPoints")
 
 [node name="TextEdit" type="TextEdit" parent="Player"]
 visible = false
@@ -76,6 +56,20 @@ mesh = SubResource("QuadMesh_ex71p")
 
 [node name="Area2D" parent="." instance=ExtResource("3_rrihi")]
 position = Vector2(-416, -128)
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="SP1" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-142, 108)
+
+[node name="SP2" type="Node2D" parent="SpawnPoints"]
+position = Vector2(148, 25)
+
+[node name="SP3" type="Node2D" parent="SpawnPoints"]
+position = Vector2(185, -125)
+
+[node name="SP4" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-170, -114)
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
 [connection signal="body_exited" from="Player" to="Player" method="_on_body_exited"]

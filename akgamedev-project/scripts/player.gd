@@ -1,9 +1,10 @@
 extends Area2D
 
-const SPEED = 230.0
+const SPEED = 250.0
 var behind_locker = false
 var spaceOn = false		#To make sure you cant enter and exit a locker by holding down space
 @export var locker_instructions: TextEdit	#Textbox for the instructions (TODO: change from using visible to manipulating the inner text)
+@export var spawnPoints: Node2D
 
 func takeInput(delta: float) -> String:			# Returns strings based on key pressed
 	if (Input.is_action_pressed("ui_right")):
@@ -23,7 +24,9 @@ func takeInput(delta: float) -> String:			# Returns strings based on key pressed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var sp = spawnPoints.get_children()
+	var pointNum = int(randf() * len(sp))
+	position = sp[pointNum].position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
