@@ -25,7 +25,7 @@ func takeInput(delta: float) -> String:			# Returns strings based on key pressed
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var sp = spawnPoints.get_children()
-	var pointNum = int(randf() * len(sp))
+	var pointNum = int(randf() * len(sp)) #chooses a random point to start at
 	position = sp[pointNum].position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
