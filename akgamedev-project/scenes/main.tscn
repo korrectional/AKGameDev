@@ -1,5 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dndws6j2yqxg5"]
+[gd_scene load_steps=9 format=3 uid="uid://dndws6j2yqxg5"]
 
+[ext_resource type="Script" path="res://scenes/Energy_bar.gd" id="2_btj2k"]
+[ext_resource type="PackedScene" uid="uid://dmvamgsah4xah" path="res://scenes/Energy_drink_Scene.tscn" id="3_ks2w6"]
 [ext_resource type="PackedScene" uid="uid://gskpj3om1n0q" path="res://scenes/teacher_test_1.tscn" id="3_rrihi"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_7v3d6"]
 
@@ -54,6 +56,17 @@ mesh = SubResource("QuadMesh_ex71p")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="ProgressBar" type="ProgressBar" parent="Player/CanvasLayer"]
+offset_left = -555.0
+offset_top = 228.0
+offset_right = -411.0
+offset_bottom = 269.0
+grow_vertical = 0
+value = 100.0
+script = ExtResource("2_btj2k")
+
 [node name="Area2D" parent="." instance=ExtResource("3_rrihi")]
 position = Vector2(-416, -128)
 
@@ -70,6 +83,9 @@ position = Vector2(185, -125)
 
 [node name="SP4" type="Node2D" parent="SpawnPoints"]
 position = Vector2(-170, -114)
+
+[node name="Area2D2" parent="." instance=ExtResource("3_ks2w6")]
+position = Vector2(262, 220)
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
 [connection signal="body_exited" from="Player" to="Player" method="_on_body_exited"]
