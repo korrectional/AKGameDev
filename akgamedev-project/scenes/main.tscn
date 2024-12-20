@@ -1,14 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dndws6j2yqxg5"]
+[gd_scene load_steps=8 format=3 uid="uid://dndws6j2yqxg5"]
 
-[ext_resource type="Script" path="res://scenes/Energy_bar.gd" id="2_btj2k"]
-[ext_resource type="PackedScene" uid="uid://dmvamgsah4xah" path="res://scenes/Energy_drink_Scene.tscn" id="3_ks2w6"]
+[ext_resource type="PackedScene" uid="uid://dxi2244tjrlmj" path="res://scenes/locker.tscn" id="1_1uho1"]
+[ext_resource type="Script" path="res://scripts/Energy_bar.gd" id="2_btj2k"]
+[ext_resource type="PackedScene" uid="uid://dmvamgsah4xah" path="res://scenes/energy_drink.tscn" id="3_ks2w6"]
 [ext_resource type="PackedScene" uid="uid://gskpj3om1n0q" path="res://scenes/teacher_test_1.tscn" id="3_rrihi"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_7v3d6"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_dvr10"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmsb1"]
-size = Vector2(20, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qnsw"]
 
@@ -17,17 +13,7 @@ size = Vector2(20, 42)
 [node name="Node2D" type="Node2D"]
 position = Vector2(3, 16)
 
-[node name="Locker" type="Area2D" parent="." groups=["Lockers"]]
-modulate = Color(0.487242, 0.0577397, 0.189952, 1)
-position = Vector2(-3, -16)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Locker"]
-position = Vector2(-1.90735e-06, -9.53674e-07)
-scale = Vector2(20, 42)
-mesh = SubResource("QuadMesh_dvr10")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Locker"]
-shape = SubResource("RectangleShape2D_kmsb1")
+[node name="Locker" parent="." instance=ExtResource("1_1uho1")]
 
 [node name="Player" type="Area2D" parent="." node_paths=PackedStringArray("locker_instructions", "spawnPoints")]
 position = Vector2(-57, -6)
@@ -67,10 +53,8 @@ grow_vertical = 0
 value = 100.0
 script = ExtResource("2_btj2k")
 
-[node name="Area2D" parent="." instance=ExtResource("3_rrihi")]
-position = Vector2(-416, -128)
-
 [node name="SpawnPoints" type="Node2D" parent="."]
+visible = false
 
 [node name="SP1" type="Node2D" parent="SpawnPoints"]
 position = Vector2(-142, 108)
@@ -84,8 +68,12 @@ position = Vector2(185, -125)
 [node name="SP4" type="Node2D" parent="SpawnPoints"]
 position = Vector2(-170, -114)
 
-[node name="Area2D2" parent="." instance=ExtResource("3_ks2w6")]
+[node name="Energy_Drink" parent="." instance=ExtResource("3_ks2w6")]
 position = Vector2(262, 220)
+scale = Vector2(0.165869, 0.199961)
+
+[node name="Area2D" parent="." instance=ExtResource("3_rrihi")]
+position = Vector2(-416, -128)
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
 [connection signal="body_exited" from="Player" to="Player" method="_on_body_exited"]

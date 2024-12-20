@@ -10,7 +10,6 @@ var speed = 0.01
 
 func _process(delta: float) -> void:
 	$path/position_of_object.progress_ratio += speed
-	print($path/position_of_object.progress_ratio)
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5r3h"]
@@ -38,4 +37,5 @@ position = Vector2(-36.6455, 279.608)
 rotation = -3.04569
 
 [node name="Sprite2D" type="Sprite2D" parent="path/position_of_object"]
+scale = Vector2(0.521973, 0.516772)
 texture = ExtResource("2_l5l6p")

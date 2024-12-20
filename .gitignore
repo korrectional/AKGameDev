@@ -13,5 +13,4 @@
 /akgamedev-project/.mono/
 /akgamedev-project/data_*/
 /akgamedev-project/mono_crash.*.json
-.vscode/settings.json
 /.vscode

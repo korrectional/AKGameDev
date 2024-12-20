@@ -1,27 +1,13 @@
 extends Area2D
 
-var SPEED = 250.0
+var SPEED = 3.0
 var behind_locker = false
 var spaceOn = false	
 var is_energy_taken = false
 @export var locker_instructions: TextEdit	#Textbox for the instructions (TODO: change from using visible to manipulating the inner text)
 @export var spawnPoints: Node2D
 
-func takeInput(delta: float) -> String:			# Returns strings based on key pressed
-	if (Input.is_action_pressed("ui_right")):
-		return "right"
-	elif (Input.is_action_pressed("ui_left")):
-		return "left"
-	
-	if (Input.is_action_pressed("ui_up")):
-		return "up"
-	elif (Input.is_action_pressed("ui_down")):
-		return "down"
-		
-	if (Input.is_key_pressed(KEY_SPACE)):
-		return "space"
-	else:
-		return "space-up"
+	# TAKE_INPUT function taken out because it only allowed one input at the time
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,17 +22,13 @@ func _physics_process(delta: float) -> void:
 	var near_locker = false
 	
 	#input
-	var input = takeInput(delta)
 	
 	#Movement input
-	if (input == "right" && visible):
-		position.x += SPEED * delta
-	elif (input == "left" && visible):
-		position.x -= SPEED * delta
-	if (input == "up" && visible):
-		position.y -= SPEED * delta
-	elif (input == "down" && visible):
-		position.y += SPEED * delta
+	if(visible):
+		position.x -= SPEED * int(Input.is_action_pressed("left"))
+		position.x += SPEED * int(Input.is_action_pressed("right"))
+		position.y -= SPEED * int(Input.is_action_pressed("up"))
+		position.y += SPEED * int(Input.is_action_pressed("down"))
 	
 	#Collision detection (TODO: Put it into its own function for better reusability and legibility) 
 	var collisions = get_overlapping_areas();
@@ -56,7 +38,7 @@ func _physics_process(delta: float) -> void:
 			near_locker = true
 	
 	#Functionality for entering and exiting a locker (TODO: Fix potential bugs and clean up junk code if possible)
-	if (input == "space" and !spaceOn and near_locker):
+	if (Input.is_action_pressed("interact") and !spaceOn and near_locker):
 		spaceOn = true
 		if (!behind_locker):
 			behind_locker = true
@@ -64,5 +46,5 @@ func _physics_process(delta: float) -> void:
 		else:
 			behind_locker = false
 			visible = false
-	elif (input == "space-up"):
+	elif (!Input.is_action_pressed("interact")):
 		spaceOn = false
