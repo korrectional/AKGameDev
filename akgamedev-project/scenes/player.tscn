@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6dqy6sr1jt2"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_4kqf0"]
+[ext_resource type="Script" path="res://scripts/Energy_bar.gd" id="2_twibt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qnsw"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ex71p"]
+
+[node name="Player" type="Area2D" node_paths=PackedStringArray("locker_instructions")]
+position = Vector2(-57, -6)
+script = ExtResource("1_4kqf0")
+locker_instructions = NodePath("TextEdit")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+offset_left = -103.0
+offset_top = 42.0
+offset_right = 95.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 12
+text = "Click SPACE to enter locker."
+editable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1qnsw")
+one_way_collision_margin = 0.0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." groups=["Player"]]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(20, 20)
+mesh = SubResource("QuadMesh_ex71p")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = -555.0
+offset_top = 228.0
+offset_right = -411.0
+offset_bottom = 269.0
+grow_vertical = 0
+value = 100.0
+script = ExtResource("2_twibt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

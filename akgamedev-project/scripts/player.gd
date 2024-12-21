@@ -5,18 +5,19 @@ var behind_locker = false
 var spaceOn = false	
 var is_energy_taken = false
 @export var locker_instructions: TextEdit	#Textbox for the instructions (TODO: change from using visible to manipulating the inner text)
-@export var spawnPoints: Node2D
+@onready var spawnPoints: Node2D = $"../SpawnPoints"
 
 	# TAKE_INPUT function taken out because it only allowed one input at the time
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(get_parent().name)
 	var sp = spawnPoints.get_children()
 	var pointNum = int(randf() * len(sp)) #chooses a random point to start at
 	position = sp[pointNum].position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	#Make sure the vars are false before doing checks
 	locker_instructions.visible = false
 	var near_locker = false

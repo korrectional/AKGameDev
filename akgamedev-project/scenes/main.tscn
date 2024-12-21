@@ -1,60 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://dndws6j2yqxg5"]
+[gd_scene load_steps=4 format=3 uid="uid://n106q7senorm"]
 
 [ext_resource type="PackedScene" uid="uid://dxi2244tjrlmj" path="res://scenes/locker.tscn" id="1_1uho1"]
-[ext_resource type="Script" path="res://scripts/Energy_bar.gd" id="2_btj2k"]
 [ext_resource type="PackedScene" uid="uid://dmvamgsah4xah" path="res://scenes/energy_drink.tscn" id="3_ks2w6"]
-[ext_resource type="PackedScene" uid="uid://gskpj3om1n0q" path="res://scenes/teacher_test_1.tscn" id="3_rrihi"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="4_7v3d6"]
+[ext_resource type="PackedScene" uid="uid://b6dqy6sr1jt2" path="res://scenes/player.tscn" id="4_fhs6c"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qnsw"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_ex71p"]
-
-[node name="Node2D" type="Node2D"]
-position = Vector2(3, 16)
+[node name="Mai" type="Node2D"]
 
 [node name="Locker" parent="." instance=ExtResource("1_1uho1")]
 
-[node name="Player" type="Area2D" parent="." node_paths=PackedStringArray("locker_instructions", "spawnPoints")]
-position = Vector2(-57, -6)
-script = ExtResource("4_7v3d6")
-locker_instructions = NodePath("TextEdit")
-spawnPoints = NodePath("../SpawnPoints")
-
-[node name="TextEdit" type="TextEdit" parent="Player"]
-visible = false
-offset_left = -103.0
-offset_top = 42.0
-offset_right = 95.0
-offset_bottom = 71.0
-theme_override_font_sizes/font_size = 12
-text = "Click SPACE to enter locker."
-editable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_1qnsw")
-one_way_collision_margin = 0.0
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Player" groups=["Player"]]
-position = Vector2(-4.76837e-07, 0)
-scale = Vector2(20, 20)
-mesh = SubResource("QuadMesh_ex71p")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
-
-[node name="ProgressBar" type="ProgressBar" parent="Player/CanvasLayer"]
-offset_left = -555.0
-offset_top = 228.0
-offset_right = -411.0
-offset_bottom = 269.0
-grow_vertical = 0
-value = 100.0
-script = ExtResource("2_btj2k")
+[node name="Player" parent="." instance=ExtResource("4_fhs6c")]
 
 [node name="SpawnPoints" type="Node2D" parent="."]
-visible = false
 
 [node name="SP1" type="Node2D" parent="SpawnPoints"]
 position = Vector2(-142, 108)
@@ -69,11 +25,4 @@ position = Vector2(185, -125)
 position = Vector2(-170, -114)
 
 [node name="Energy_Drink" parent="." instance=ExtResource("3_ks2w6")]
-position = Vector2(262, 220)
-scale = Vector2(0.165869, 0.199961)
-
-[node name="Area2D" parent="." instance=ExtResource("3_rrihi")]
-position = Vector2(-416, -128)
-
-[connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
-[connection signal="body_exited" from="Player" to="Player" method="_on_body_exited"]
+position = Vector2(93, 74)
