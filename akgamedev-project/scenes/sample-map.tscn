@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://drgim2vanjs6v"]
+[gd_scene load_steps=6 format=3 uid="uid://drgim2vanjs6v"]
 
 [ext_resource type="Texture2D" uid="uid://b3fhlpo8m0023" path="res://assets/ak-samplemap.png" id="1_3w5fq"]
 [ext_resource type="PackedScene" uid="uid://dxi2244tjrlmj" path="res://scenes/locker.tscn" id="2_bcgkg"]
 [ext_resource type="PackedScene" uid="uid://b6dqy6sr1jt2" path="res://scenes/player.tscn" id="3_qdu8m"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx2cb"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6t8ib"]
+
 [node name="Sample-map" type="Node2D"]
 
 [node name="Ak-samplemap" type="Sprite2D" parent="."]
-z_index = -2
-position = Vector2(-1027, 821)
+position = Vector2(-1606, 706)
 rotation = 0.275447
 scale = Vector2(4.11613, 4.11613)
 texture = ExtResource("1_3w5fq")
@@ -42,13 +45,14 @@ position = Vector2(593, 358)
 [node name="Locker9" parent="lockers" instance=ExtResource("2_bcgkg")]
 position = Vector2(541, 359)
 
-[node name="Walls" type="Area2D" parent="."]
-position = Vector2(529, 123)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(529, 123)
 polygon = PackedVector2Array(4, 61, 4, 164, -243, 164, -239, -12, 107, -4, 107, -43, 330, -39, 332, 3, 663, 7, 660, 49, 647, 46, 647, 13, 568, 13, 567, 155, 498, 150, 499, 12, 322, 13, 323, -28, 117, -35, 115, 5, -229, 0, -230, 152, -10, 150, -9, 62)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(529, 123)
 polygon = PackedVector2Array(-231, 273, -231, 286, 118, 269, 116, 314, 339, 319, 342, 265, 675, 274, 673, 114, 659, 116, 663, 254, 378, 257, 375, 76, 253, 72, 253, 15, 239, 15, 242, 165, 87, 162, 91, 50, 75, 52, 77, 173, 218, 181, 218, 260, 236, 260, 235, 180, 256, 176, 257, 82, 366, 89, 369, 251, 330, 255, 330, 309, 128, 303, 130, 251)
 
 [node name="Player" parent="." instance=ExtResource("3_qdu8m")]
@@ -68,3 +72,32 @@ position = Vector2(191, 292)
 
 [node name="SP4" type="Node2D" parent="SpawnPoints"]
 position = Vector2(1240, 173)
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 275.0
+offset_top = 32.0
+offset_right = 606.0
+offset_bottom = 102.0
+text = "Q&A: WHY ARE THE WALLS WAVY?
+IDK I JUST PUT THEM AS PLACEHOLDER
+"
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(134, 390)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_yx2cb")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2"]
+position = Vector2(8.10623e-06, 1.90735e-06)
+scale = Vector2(20, 20)
+mesh = SubResource("QuadMesh_6t8ib")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(526, 188, 528, 274, 294, 278, 295, 117, 636, 121, 642, 86, 853, 90, 857, 129, 1025, 133, 1026, 271, 1094, 276, 1101, 135, 1028, 134, 1185, 134, 1185, 169)
+
+[node name="Line2D2" type="Line2D" parent="."]
+points = PackedVector2Array(301, 400, 651, 379, 651, 427, 863, 433, 866, 381, 1201, 386, 1195, 245)
+
+[node name="Line2D3" type="Line2D" parent="."]
+points = PackedVector2Array(610, 179, 611, 287, 752, 293, 756, 369, 760, 290, 777, 290, 771, 144, 784, 201, 898, 204, 901, 383)
