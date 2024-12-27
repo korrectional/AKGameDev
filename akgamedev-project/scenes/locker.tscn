@@ -3,16 +3,16 @@
 [sub_resource type="QuadMesh" id="QuadMesh_dvr10"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmsb1"]
-size = Vector2(20, 42)
+size = Vector2(22, 37)
 
 [node name="Locker" type="Area2D" groups=["Lockers"]]
 modulate = Color(0.487242, 0.0577397, 0.189952, 1)
-position = Vector2(-3, -16)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(-1.90735e-06, -9.53674e-07)
-scale = Vector2(20, 42)
+position = Vector2(2.98023e-07, 0.5)
+scale = Vector2(22, 37)
 mesh = SubResource("QuadMesh_dvr10")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_kmsb1")

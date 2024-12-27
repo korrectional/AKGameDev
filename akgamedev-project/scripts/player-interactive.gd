@@ -10,5 +10,5 @@ func _process(_delta: float) -> void:
 		player.collidingLocker(false)
 	for collision in collisions:
 		if "Lockers" in collision.get_groups():
-			player.collidingLocker(true)
+			player.collidingLocker(true, collision)
 			

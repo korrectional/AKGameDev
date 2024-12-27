@@ -8,10 +8,12 @@
 
 [sub_resource type="QuadMesh" id="QuadMesh_ex71p"]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("locker_instructions")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("locker_instructions", "mesh", "camera")]
 position = Vector2(-57, -6)
 script = ExtResource("1_4kqf0")
 locker_instructions = NodePath("TextEdit")
+mesh = NodePath("MeshInstance2D")
+camera = NodePath("Camera2D")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 visible = false
@@ -29,6 +31,8 @@ shape = SubResource("RectangleShape2D_1qnsw")
 one_way_collision_margin = 0.0
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." groups=["Player"]]
+z_index = 1
+z_as_relative = false
 position = Vector2(-4.76837e-07, 0)
 scale = Vector2(20, 20)
 mesh = SubResource("QuadMesh_ex71p")
