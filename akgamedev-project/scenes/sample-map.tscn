@@ -80,3 +80,4 @@ position = Vector2(191, 292)
 position = Vector2(1240, 173)
 
 [node name="Area2D" parent="." instance=ExtResource("4_jea8i")]
+position = Vector2(210, 321)

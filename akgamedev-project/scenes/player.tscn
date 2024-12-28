@@ -8,12 +8,28 @@
 
 [sub_resource type="QuadMesh" id="QuadMesh_ex71p"]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("locker_instructions", "mesh", "camera")]
+[node name="Player" type="CharacterBody2D"]
 position = Vector2(-57, -6)
 script = ExtResource("1_4kqf0")
-locker_instructions = NodePath("TextEdit")
-mesh = NodePath("MeshInstance2D")
-camera = NodePath("Camera2D")
+
+[node name="Player" type="Area2D" parent="."]
+script = ExtResource("3_ia5u1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_1qnsw")
+one_way_collision_margin = 0.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1qnsw")
+one_way_collision_margin = 0.0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." groups=["Player"]]
+z_index = 1
+z_as_relative = false
+scale = Vector2(20, 20)
+mesh = SubResource("QuadMesh_ex71p")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 visible = false
@@ -26,19 +42,6 @@ theme_override_font_sizes/font_size = 12
 text = "Click SPACE to enter locker."
 editable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1qnsw")
-one_way_collision_margin = 0.0
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." groups=["Player"]]
-z_index = 1
-z_as_relative = false
-position = Vector2(-4.76837e-07, 0)
-scale = Vector2(20, 20)
-mesh = SubResource("QuadMesh_ex71p")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
@@ -49,10 +52,3 @@ offset_bottom = 269.0
 grow_vertical = 0
 value = 100.0
 script = ExtResource("2_twibt")
-
-[node name="Player" type="Area2D" parent="."]
-script = ExtResource("3_ia5u1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_1qnsw")
-one_way_collision_margin = 0.0
