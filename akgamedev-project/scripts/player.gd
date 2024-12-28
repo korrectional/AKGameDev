@@ -1,6 +1,13 @@
 extends CharacterBody2D
 
+<<<<<<< HEAD
 var speed = 3.0
+=======
+@export var speed = 400
+@export var friction = 0.1
+@export var acceleration = 0.1
+
+>>>>>>> 0d0d13020a39fb152a4e4ceb6ce4cfed88ee4034
 var behind_locker = false
 var spaceOn = false	
 var is_energy_taken = false
@@ -43,14 +50,24 @@ func _ready() -> void:
 		position = sp[pointNum].position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta):
 	#Movement input
 	if(!behind_locker):
+<<<<<<< HEAD
 		position.x -= speed * int(Input.is_action_pressed("left"))
 		position.x += speed * int(Input.is_action_pressed("right"))
 		position.y -= speed * int(Input.is_action_pressed("up"))
 		position.y += speed * int(Input.is_action_pressed("down"))
 	
+=======
+		var direction = Input.get_vector("left", "right", "up", "down")
+		if direction.length() > 0:
+			velocity = velocity.lerp(direction.normalized() * speed, acceleration)
+		else:
+			velocity = velocity.lerp(Vector2.ZERO, friction)
+	else:
+		velocity = Vector2.ZERO
+>>>>>>> 0d0d13020a39fb152a4e4ceb6ce4cfed88ee4034
 	move_and_slide() # this is a command to apply physics
 	#Functionality for entering and exiting a locker
 	if (Input.is_action_pressed("interact") and !spaceOn and near_locker):
