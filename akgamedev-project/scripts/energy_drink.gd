@@ -10,7 +10,6 @@ func _ready() -> void:
 	timer.wait_time = 3.0
 	add_child(timer)
 
-<<<<<<< HEAD
 func _process(delta: float) -> void:
 	if (!active):
 		self.visible = false
@@ -25,12 +24,3 @@ func _on_area_entered(area: Area2D) -> void:
 		area.get_parent().is_energy_taken = true
 		area.get_parent().timer.start()
 		self.timer.start()
-		print("Drugs activated")
-=======
-# When the player touches the energy drink, the speed of the player is increased
-func _on_area_entered(area: Area2D) -> void:
-	area.get_parent().speed *= 2
-	self.queue_free()
-	area.get_parent().is_energy_taken = true
-	print("Drugs activated")
->>>>>>> 0d0d13020a39fb152a4e4ceb6ce4cfed88ee4034
