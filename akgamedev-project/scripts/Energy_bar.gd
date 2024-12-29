@@ -5,7 +5,6 @@ extends ProgressBar
 
 # This script is used to count the energy of the player
 func _process(_delta: float) -> void:
-	print(player.name)
 	if (self.value <= 0):
 		self.visible = false;
 	else:
