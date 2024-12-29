@@ -2,7 +2,7 @@ extends Area2D
 
 
 
-
+# When the player touches the energy drink, the speed of the player is increased
 func _on_area_entered(area: Area2D) -> void:
 	area.get_parent().SPEED = 7
 	self.queue_free()
