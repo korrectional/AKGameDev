@@ -1,25 +1,24 @@
 extends CharacterBody2D
 
-@export var SPEED = 250
+@export var SPEED = 250 #base speed
 @export var friction = 0.4
 @export var acceleration = 0.2
-var speed = SPEED
+var speed = SPEED #Speed with modifiers
 var speedMultiplier = 1.0;
 var behind_locker = false
-var spaceOn = false	
-var is_energy_taken = false
-var timeActivated: int
-var oldPos: Vector2
-var collisionInfo
+var spaceOn = false #To prevent someone holding space and jumping in and out of a locker
+var is_energy_taken = false #If consumed drink
+var oldPos: Vector2 #For the locker entry and exit
+var collisionInfo #Collision info for a locker
 @onready var locker_instructions: TextEdit = $"TextEdit"	#Textbox for the instructions
-@onready var mesh: MeshInstance2D = $"MeshInstance2D"
+@onready var mesh: MeshInstance2D = $"MeshInstance2D"	#player mesh
 @onready var camera: Camera2D = $"Camera2D"
 @onready var spawnPoints: Node2D = $"../SpawnPoints"
 var timer: Timer
 var near_locker = false
 
-
-func collidingLocker(currently: bool, collision=null): # this one is called by the area2d in player
+#Called by Player's area2D on collision with a locker
+func collidingLocker(currently: bool, collision=null):
 	collisionInfo = collision
 	if (currently or behind_locker):
 		locker_instructions.visible = true
@@ -34,20 +33,24 @@ func collidingLocker(currently: bool, collision=null): # this one is called by t
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#Setting up timer for energy drink
 	timer = Timer.new()
 	timer.autostart = false
 	timer.one_shot = true
 	timer.wait_time = 2.0
 	add_child(timer)
-	if(false): # not using this rn for development purposes
-		print(get_parent().name)
+	
+	#Random spawn points, keep false for development
+	if(false):
 		var sp = spawnPoints.get_children() 
 		var pointNum = int(randf() * len(sp)) #chooses a random point to start at
 		position = sp[pointNum].position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(delta: float):
+	#Applies speed multipliers;
 	speed = SPEED * speedMultiplier
+	
 	#Movement input
 	if(!behind_locker):
 		var direction = Input.get_vector("left", "right", "up", "down")
@@ -59,6 +62,7 @@ func _physics_process(delta):
 		velocity = Vector2.ZERO
 		
 	move_and_slide() # this is a command to apply physics
+	
 	#Functionality for entering and exiting a locker
 	if (Input.is_action_pressed("interact") and !spaceOn and near_locker):
 		spaceOn = true
@@ -71,12 +75,15 @@ func _physics_process(delta):
 			behind_locker = false
 	elif (!Input.is_action_pressed("interact")):
 		spaceOn = false
-		
+	
+	#Sets visibilty of player according to state
 	mesh.visible = !behind_locker
 	
+	#When to deactivate speed boost
 	if (timer.time_left <= 0 and is_energy_taken):
 		is_energy_taken = false
 	
+	#Speed boost once the drink taken
 	if (is_energy_taken):
 		self.speedMultiplier = 1.75
 	else:

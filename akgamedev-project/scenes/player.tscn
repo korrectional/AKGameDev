@@ -52,3 +52,9 @@ offset_right = 53.0
 offset_bottom = -21.0
 show_percentage = false
 script = ExtResource("2_twibt")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -54.0
+offset_top = -31.0
+offset_right = 54.0
+offset_bottom = -21.0
