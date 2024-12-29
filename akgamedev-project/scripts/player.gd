@@ -8,7 +8,6 @@ var speedMultiplier = 1.0;
 var behind_locker = false
 var spaceOn = false	
 var is_energy_taken = false
-var energyLeft: int = 0
 var timeActivated: int
 var oldPos: Vector2
 var collisionInfo
@@ -79,6 +78,6 @@ func _physics_process(delta):
 		is_energy_taken = false
 	
 	if (is_energy_taken):
-		self.speedMultiplier = 1.5
+		self.speedMultiplier = 1.75
 	else:
 		self.speedMultiplier = 1

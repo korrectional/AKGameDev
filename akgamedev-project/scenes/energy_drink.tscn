@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvjo1"]
 size = Vector2(49, 82)
 
-[node name="Area2D" type="Area2D"]
+[node name="EnergyDrink" type="Area2D"]
 scale = Vector2(0.165869, 0.199961)
 script = ExtResource("1_cdaqn")
 

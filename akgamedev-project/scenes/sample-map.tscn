@@ -14,7 +14,10 @@ scale = Vector2(4.11613, 4.11613)
 texture = ExtResource("1_3w5fq")
 
 [node name="Player" parent="." instance=ExtResource("3_qdu8m")]
-position = Vector2(211, 378)
+position = Vector2(225, 337)
+
+[node name="EnergyDrink" parent="." instance=ExtResource("4_jea8i")]
+position = Vector2(231, 297)
 
 [node name="lockers" type="Node" parent="."]
 
@@ -78,6 +81,3 @@ position = Vector2(191, 292)
 
 [node name="SP4" type="Node2D" parent="SpawnPoints"]
 position = Vector2(1240, 173)
-
-[node name="Area2D" parent="." instance=ExtResource("4_jea8i")]
-position = Vector2(210, 321)
