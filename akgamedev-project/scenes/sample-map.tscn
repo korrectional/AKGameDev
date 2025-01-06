@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://drgim2vanjs6v"]
+[gd_scene load_steps=6 format=3 uid="uid://drgim2vanjs6v"]
 
 [ext_resource type="Texture2D" uid="uid://b3fhlpo8m0023" path="res://assets/ak-samplemap.png" id="1_3w5fq"]
 [ext_resource type="PackedScene" uid="uid://dxi2244tjrlmj" path="res://scenes/locker.tscn" id="2_bcgkg"]
 [ext_resource type="PackedScene" uid="uid://b6dqy6sr1jt2" path="res://scenes/player.tscn" id="3_qdu8m"]
 [ext_resource type="PackedScene" uid="uid://dmvamgsah4xah" path="res://scenes/energy_drink.tscn" id="4_jea8i"]
+[ext_resource type="PackedScene" uid="uid://bxukokqx3edx8" path="res://scenes/phone.tscn" id="5_e48gy"]
 
 [node name="Sample-map" type="Node2D"]
 
@@ -81,3 +82,5 @@ position = Vector2(191, 292)
 
 [node name="SP4" type="Node2D" parent="SpawnPoints"]
 position = Vector2(1240, 173)
+
+[node name="Phone" parent="." instance=ExtResource("5_e48gy")]

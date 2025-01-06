@@ -1,23 +1,26 @@
-extends Node2D
+extends Area2D
 
-var phone_collected = false
-var player_in_area = false
+var active: bool = true
+var timer: Timer
 
-# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	timer = Timer.new()
+	timer.autostart = false
+	timer.one_shot = true
+	timer.wait_time = 3.0
+	add_child(timer)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if (!active):
+		self.visible = false
+		if (timer.time_left <= 0):
+			active = true
+	else:
+		self.visible = true
 
-
-func _process(_delta: float) -> void:
-	if phone_collected == false:
-		$sprite2d.play(false)
-	if phone_collected == true:
-		$sprite2d.play(true)
-		if player_in_area:
-			if Input.is_action_just_pressed("e"):
-				phone_collected = false
-
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func _on_area_entered(area: Area2D) -> void:
+	if (area.name == "Player" and active):
+		active = false
+		area.get_parent().phone_collected = true
+		area.get_parent().timer.start()
+		self.timer.start()

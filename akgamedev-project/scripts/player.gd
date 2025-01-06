@@ -8,6 +8,7 @@ var speedMultiplier = 1.0;
 var behind_locker = false
 var spaceOn = false #To prevent someone holding space and jumping in and out of a locker
 var is_energy_taken = false #If consumed drink
+var phone_collected = false
 var oldPos: Vector2 #For the locker entry and exit
 var collisionInfo #Collision info for a locker
 @onready var locker_instructions: TextEdit = $"TextEdit"	#Textbox for the instructions
@@ -88,3 +89,6 @@ func _physics_process(delta: float):
 		self.speedMultiplier = 1.75
 	else:
 		self.speedMultiplier = 1
+		
+	if (timer.time_left <= 0 and phone_collected):
+		phone_collected = false
