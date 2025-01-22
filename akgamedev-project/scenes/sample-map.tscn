@@ -93,3 +93,4 @@ offset_right = 461.0
 offset_bottom = 41.0
 scale = Vector2(1.5672, 1.5672)
 text = "I took the sattelite pic and made a sample crap map out of it"
+metadata/_edit_use_anchors_ = true

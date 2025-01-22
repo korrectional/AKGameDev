@@ -12,9 +12,9 @@
 [sub_resource type="SphereMesh" id="SphereMesh_2kgud"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_velyk"]
-vertices = PackedVector2Array(281.07, -176.039, 307.789, -105.313, 270.727, -103.492, 269.719, -142.93, 138.859, -176.938, 239, -140.133, 155, -134, 155, -81.5938, 127.32, -80.4609, 186.891, -134, 239, -10.6094, 188.109, -22.0781, 289.617, 50.4297, 161.133, 55.8984, 61.8594, 6.71875, 61.2266, -21.0781, 287.359, -7.57813)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5, 6), PackedInt32Array(7, 8, 4, 6), PackedInt32Array(9, 6, 5), PackedInt32Array(9, 5, 10, 11), PackedInt32Array(12, 13, 14, 15, 11, 10), PackedInt32Array(12, 10, 16)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(52, 13, 159, 66, 300, 60, 297, -17, 249, -20, 249, -131, 260, -132, 261, -93, 322, -96, 288, -186, 130, -187, 116, -70, 165, -72, 165, -124, 177, -124, 178, -32, 51, -31)])
+vertices = PackedVector2Array(158.523, 56.0078, 3.49219, 67.5938, 56.6797, -21.0391, 188.109, -22.0781, 311, 52.7891, 239, -10.6328, 281.07, -176.039, 307.789, -105.313, 270.727, -103.492, 269.719, -142.93, 138.859, -176.938, 239, -140.133, 155, -134, 155, -81.5938, 127.32, -80.4609, 186.891, -134, 434.227, -93, 523.453, -93, 530.461, 57.7969, 494.758, 53.9375, 436.203, -6.49219, 378.781, -1.57031, 384.773, 67.3203, 311, 100.539, 490.719, 110.469, 417, 69.7969, 417, -3.45313)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 6, 9, 11, 12), PackedInt32Array(13, 14, 10, 12), PackedInt32Array(15, 12, 11), PackedInt32Array(16, 17, 18, 19, 20), PackedInt32Array(15, 11, 5, 3), PackedInt32Array(4, 5, 21, 22), PackedInt32Array(23, 4, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(20, 19, 24, 25, 26)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-15, 79, 159, 66, 301, 63, 301, 110, 500, 121, 504, 65, 541, 69, 533, -103, 424, -103, 426, -15, 407, -12, 407, 59, 394, 58, 388, -11, 249, -20, 249, -131, 260, -132, 261, -93, 322, -96, 288, -186, 130, -187, 116, -70, 165, -72, 165, -124, 177, -124, 178, -32, 51, -31)])
 
 [node name="Sample-map" type="Node2D"]
 
@@ -105,6 +105,7 @@ scale = Vector2(1.5672, 1.5672)
 text = "Im using this map to test teacher movement"
 
 [node name="Teacher" type="CharacterBody2D" parent="."]
+position = Vector2(487, 334)
 script = ExtResource("6_g2oa7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teacher"]
@@ -119,5 +120,5 @@ mesh = SubResource("SphereMesh_2kgud")
 debug_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(-209, 79)
+position = Vector2(356, 309)
 navigation_polygon = SubResource("NavigationPolygon_velyk")
