@@ -104,9 +104,10 @@ offset_bottom = 41.0
 scale = Vector2(1.5672, 1.5672)
 text = "Im using this map to test teacher movement"
 
-[node name="Teacher" type="CharacterBody2D" parent="."]
+[node name="Teacher" type="CharacterBody2D" parent="." node_paths=PackedStringArray("patrolPoints")]
 position = Vector2(487, 334)
 script = ExtResource("6_g2oa7")
+patrolPoints = [NodePath("../NavigationRegion2D/patrolPoint1"), NodePath("../NavigationRegion2D/patrolPoint2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teacher"]
 shape = SubResource("CircleShape2D_f2faj")
@@ -122,3 +123,9 @@ debug_enabled = true
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(356, 309)
 navigation_polygon = SubResource("NavigationPolygon_velyk")
+
+[node name="patrolPoint1" type="Node2D" parent="NavigationRegion2D"]
+position = Vector2(111, 10)
+
+[node name="patrolPoint2" type="Node2D" parent="NavigationRegion2D"]
+position = Vector2(321, 35)
