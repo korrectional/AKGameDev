@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=3 uid="uid://ci7cswfccvdhe"]
+
+[ext_resource type="Texture2D" uid="uid://b3fhlpo8m0023" path="res://assets/ak-samplemap.png" id="1_ikdpv"]
+[ext_resource type="PackedScene" uid="uid://b6dqy6sr1jt2" path="res://scenes/player.tscn" id="2_6fe7a"]
+[ext_resource type="PackedScene" uid="uid://dmvamgsah4xah" path="res://scenes/energy_drink.tscn" id="3_ls2qa"]
+[ext_resource type="PackedScene" uid="uid://dxi2244tjrlmj" path="res://scenes/locker.tscn" id="4_xipkj"]
+[ext_resource type="PackedScene" uid="uid://bxukokqx3edx8" path="res://scenes/phone.tscn" id="5_pn7ds"]
+[ext_resource type="Script" path="res://scripts/teacher-pathfinder.gd" id="6_g2oa7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f2faj"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2kgud"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_velyk"]
+vertices = PackedVector2Array(281.07, -176.039, 307.789, -105.313, 270.727, -103.492, 269.719, -142.93, 138.859, -176.938, 239, -140.133, 155, -134, 155, -81.5938, 127.32, -80.4609, 186.891, -134, 239, -10.6094, 188.109, -22.0781, 289.617, 50.4297, 161.133, 55.8984, 61.8594, 6.71875, 61.2266, -21.0781, 287.359, -7.57813)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5, 6), PackedInt32Array(7, 8, 4, 6), PackedInt32Array(9, 6, 5), PackedInt32Array(9, 5, 10, 11), PackedInt32Array(12, 13, 14, 15, 11, 10), PackedInt32Array(12, 10, 16)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(52, 13, 159, 66, 300, 60, 297, -17, 249, -20, 249, -131, 260, -132, 261, -93, 322, -96, 288, -186, 130, -187, 116, -70, 165, -72, 165, -124, 177, -124, 178, -32, 51, -31)])
+
+[node name="Sample-map" type="Node2D"]
+
+[node name="Ak-samplemap" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(742, 319)
+rotation = 0.275447
+scale = Vector2(4.11613, 4.11613)
+texture = ExtResource("1_ikdpv")
+
+[node name="Player" parent="." instance=ExtResource("2_6fe7a")]
+position = Vector2(225, 337)
+
+[node name="EnergyDrink" parent="." instance=ExtResource("3_ls2qa")]
+position = Vector2(231, 297)
+
+[node name="lockers" type="Node" parent="."]
+
+[node name="Locker" parent="lockers" instance=ExtResource("4_xipkj")]
+position = Vector2(397, 147)
+
+[node name="Locker2" parent="lockers" instance=ExtResource("4_xipkj")]
+position = Vector2(659, 111)
+
+[node name="Locker3" parent="lockers" instance=ExtResource("4_xipkj")]
+position = Vector2(792, 161)
+
+[node name="Locker4" parent="lockers" instance=ExtResource("4_xipkj")]
+position = Vector2(917, 322)
+
+[node name="Locker5" parent="lockers" instance=ExtResource("4_xipkj")]
+position = Vector2(1012, 255)
+
+[node name="Locker6" parent="lockers" instance=ExtResource("4_xipkj")]
+position = Vector2(1109, 160)
+
+[node name="Locker7" parent="lockers" instance=ExtResource("4_xipkj")]
+position = Vector2(393, 371)
+
+[node name="Locker8" parent="lockers" instance=ExtResource("4_xipkj")]
+position = Vector2(593, 358)
+
+[node name="Locker9" parent="lockers" instance=ExtResource("4_xipkj")]
+position = Vector2(541, 359)
+
+[node name="TestMap" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TestMap"]
+position = Vector2(529, 123)
+polygon = PackedVector2Array(2, 65, 5, 156, -240, 160, -239, -12, 103, -7, 108, -43, 330, -39, 333, 1, 661, 6, 661, 46, 651, 47, 651, 16, 577, 17, 569, 159, 491, 153, 490, 15, 323, 11, 319, -28, 116, -32, 112, 3, -229, 0, -230, 150, -6, 146, -8, 65)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TestMap"]
+position = Vector2(529, 123)
+polygon = PackedVector2Array(-228, 271, -228, 282, 117, 262, 117, 310, 340, 316, 343, 263, 678, 268, 671, 121, 661, 121, 666, 259, 377, 253, 374, 76, 259, 73, 247, 20, 237, 21, 242, 165, 88, 159, 86, 56, 76, 55, 77, 169, 218, 175, 222, 246, 232, 246, 235, 172, 254, 172, 250, 83, 364, 86, 367, 253, 332, 252, 330, 309, 128, 303, 127, 250)
+
+[node name="Line2D" type="Line2D" parent="TestMap"]
+points = PackedVector2Array(526, 188, 528, 274, 294, 278, 295, 117, 636, 121, 642, 86, 853, 90, 857, 129, 1025, 133, 1026, 271, 1094, 276, 1101, 135, 1028, 134, 1185, 134, 1185, 169)
+
+[node name="Line2D2" type="Line2D" parent="TestMap"]
+points = PackedVector2Array(301, 400, 651, 379, 651, 427, 863, 433, 866, 381, 1201, 386, 1195, 245)
+
+[node name="Line2D3" type="Line2D" parent="TestMap"]
+points = PackedVector2Array(610, 179, 611, 287, 752, 293, 756, 369, 760, 290, 777, 290, 771, 144, 784, 201, 898, 204, 901, 383)
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+visible = false
+
+[node name="SP1" type="Node2D" parent="SpawnPoints"]
+position = Vector2(249, 337)
+
+[node name="SP2" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1237, 211)
+
+[node name="SP3" type="Node2D" parent="SpawnPoints"]
+position = Vector2(191, 292)
+
+[node name="SP4" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1240, 173)
+
+[node name="Phone" parent="." instance=ExtResource("5_pn7ds")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 18.0
+offset_right = 461.0
+offset_bottom = 41.0
+scale = Vector2(1.5672, 1.5672)
+text = "Im using this map to test teacher movement"
+
+[node name="Teacher" type="CharacterBody2D" parent="."]
+script = ExtResource("6_g2oa7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teacher"]
+shape = SubResource("CircleShape2D_f2faj")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Teacher"]
+position = Vector2(0, 2.74181e-06)
+scale = Vector2(20.0227, 20)
+mesh = SubResource("SphereMesh_2kgud")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Teacher"]
+debug_enabled = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-209, 79)
+navigation_polygon = SubResource("NavigationPolygon_velyk")

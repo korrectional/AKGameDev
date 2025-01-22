@@ -2,7 +2,7 @@ extends Area2D
 
 var active: bool = true
 var timer: Timer
-@onready var player = $".."
+@onready var player: CharacterBody2D = $"../Player"
 
 #Sets up timer
 func _ready() -> void:

@@ -9,6 +9,7 @@
 [node name="Sample-map" type="Node2D"]
 
 [node name="Ak-samplemap" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(742, 319)
 rotation = 0.275447
 scale = Vector2(4.11613, 4.11613)
@@ -91,4 +92,4 @@ offset_top = 18.0
 offset_right = 461.0
 offset_bottom = 41.0
 scale = Vector2(1.5672, 1.5672)
-text = "I took the sattelite pic and made a sample shit map out of it"
+text = "I took the sattelite pic and made a sample crap map out of it"
