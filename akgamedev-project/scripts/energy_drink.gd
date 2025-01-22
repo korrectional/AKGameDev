@@ -13,7 +13,7 @@ func _ready() -> void:
 	add_child(timer)
 
 #Drink respawn stuff. 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (!active):
 		self.visible = false
 		if (timer.time_left <= 0):

@@ -48,7 +48,7 @@ func _ready() -> void:
 		position = sp[pointNum].position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float):
+func _physics_process(_delta: float):
 	#Applies speed multipliers;
 	speed = SPEED * speedMultiplier
 	

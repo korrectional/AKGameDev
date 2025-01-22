@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ci7cswfccvdhe"]
+[gd_scene load_steps=11 format=3 uid="uid://ci7cswfccvdhe"]
 
 [ext_resource type="Texture2D" uid="uid://b3fhlpo8m0023" path="res://assets/ak-samplemap.png" id="1_ikdpv"]
 [ext_resource type="PackedScene" uid="uid://b6dqy6sr1jt2" path="res://scenes/player.tscn" id="2_6fe7a"]
@@ -11,10 +11,12 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_2kgud"]
 
+[sub_resource type="PrismMesh" id="PrismMesh_mh1px"]
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_velyk"]
-vertices = PackedVector2Array(158.523, 56.0078, 3.49219, 67.5938, 56.6797, -21.0391, 188.109, -22.0781, 311, 52.7891, 239, -10.6328, 281.07, -176.039, 307.789, -105.313, 270.727, -103.492, 269.719, -142.93, 138.859, -176.938, 239, -140.133, 155, -134, 155, -81.5938, 127.32, -80.4609, 186.891, -134, 434.227, -93, 523.453, -93, 530.461, 57.7969, 494.758, 53.9375, 436.203, -6.49219, 378.781, -1.57031, 384.773, 67.3203, 311, 100.539, 490.719, 110.469, 417, 69.7969, 417, -3.45313)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 6, 9, 11, 12), PackedInt32Array(13, 14, 10, 12), PackedInt32Array(15, 12, 11), PackedInt32Array(16, 17, 18, 19, 20), PackedInt32Array(15, 11, 5, 3), PackedInt32Array(4, 5, 21, 22), PackedInt32Array(23, 4, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(20, 19, 24, 25, 26)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-15, 79, 159, 66, 301, 63, 301, 110, 500, 121, 504, 65, 541, 69, 533, -103, 424, -103, 426, -15, 407, -12, 407, 59, 394, 58, 388, -11, 249, -20, 249, -131, 260, -132, 261, -93, 322, -96, 288, -186, 130, -187, 116, -70, 165, -72, 165, -124, 177, -124, 178, -32, 51, -31)])
+vertices = PackedVector2Array(158.523, 56.0078, 3.49219, 67.5938, 56.6797, -21.0391, 188.109, -22.0781, 311, 52.7891, 239.156, -10.6172, 281.07, -176.039, 307.789, -105.313, 271, -103.5, 271, -142.313, 138.859, -176.938, 236.813, -144.75, 154.813, -81.5938, 127.32, -80.4609, 153.781, -137.688, 186.906, -132.594, 378.508, -1.59375, 382.523, 69.5078, 311, 100.539, 490.719, 110.469, 420.859, 71.5313, 494.758, 53.9375, 421.867, -4.67969, 436.211, -5.70313, 523.453, -93, 530.461, 57.7969, 434.227, -93)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 6, 9, 11), PackedInt32Array(12, 13, 10, 14), PackedInt32Array(14, 10, 11, 15), PackedInt32Array(15, 11, 5, 3), PackedInt32Array(4, 5, 16, 17), PackedInt32Array(18, 4, 17, 19), PackedInt32Array(19, 17, 20), PackedInt32Array(21, 19, 20, 22, 23), PackedInt32Array(24, 25, 21, 23, 26)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-15, 79, 159, 66, 301, 63, 301, 110, 500, 121, 504, 65, 541, 69, 533, -103, 424, -103, 426, -15, 412, -14, 411, 61, 392, 60, 388, -11, 249, -20, 247, -134, 261, -133, 261, -93, 322, -96, 288, -186, 130, -187, 116, -70, 165, -72, 164, -126, 177, -124, 178, -32, 51, -31)])
 
 [node name="Sample-map" type="Node2D"]
 
@@ -103,6 +105,7 @@ offset_right = 461.0
 offset_bottom = 41.0
 scale = Vector2(1.5672, 1.5672)
 text = "Im using this map to test teacher movement"
+metadata/_edit_use_anchors_ = true
 
 [node name="Teacher" type="CharacterBody2D" parent="." node_paths=PackedStringArray("patrolPoints")]
 position = Vector2(487, 334)
@@ -120,12 +123,29 @@ mesh = SubResource("SphereMesh_2kgud")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Teacher"]
 debug_enabled = true
 
+[node name="FieldOfView" type="Node2D" parent="Teacher"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Teacher/FieldOfView"]
+modulate = Color(0.594376, 0.23006, 0.268869, 0.411765)
+position = Vector2(9.53674e-07, -81.6051)
+scale = Vector2(186.696, 165.715)
+mesh = SubResource("PrismMesh_mh1px")
+
+[node name="Area2D" type="Area2D" parent="Teacher/FieldOfView"]
+position = Vector2(0, -81.6051)
+scale = Vector2(186.696, 165.715)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Teacher/FieldOfView/Area2D"]
+polygon = PackedVector2Array(0, 0.486408, -0.498136, -0.497208, 0.49278, -0.497208)
+
+[node name="RayCast2D" type="RayCast2D" parent="Teacher"]
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(356, 309)
+position = Vector2(356, 311)
 navigation_polygon = SubResource("NavigationPolygon_velyk")
 
 [node name="patrolPoint1" type="Node2D" parent="NavigationRegion2D"]
 position = Vector2(111, 10)
 
 [node name="patrolPoint2" type="Node2D" parent="NavigationRegion2D"]
-position = Vector2(321, 35)
+position = Vector2(474, -68)

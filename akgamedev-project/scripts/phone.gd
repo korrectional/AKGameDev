@@ -6,7 +6,7 @@ var timer: Timer
 func _ready() -> void:
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (!active):
 		self.visible = false
 	else:
