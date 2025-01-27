@@ -141,6 +141,7 @@ polygon = PackedVector2Array(0, 0.486408, -0.498136, -0.497208, 0.49278, -0.4972
 [node name="RayCast2D" type="RayCast2D" parent="Teacher"]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 position = Vector2(356, 311)
 navigation_polygon = SubResource("NavigationPolygon_velyk")
 

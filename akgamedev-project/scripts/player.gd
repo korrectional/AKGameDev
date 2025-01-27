@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var SPEED = 250 #base speed
+@export var SPEED = 170 #base speed
 @export var friction = 0.4
 @export var acceleration = 0.2
 var speed = SPEED #Speed with modifiers
@@ -15,6 +15,7 @@ var collisionInfo #Collision info for a locker
 @onready var mesh: MeshInstance2D = $"MeshInstance2D"	#player mesh
 @onready var camera: Camera2D = $"Camera2D"
 @onready var spawnPoints: Node2D = $"../SpawnPoints"
+@onready var collider: CollisionShape2D = $CollisionShape2D
 var timer: Timer
 var near_locker = false
 
@@ -79,6 +80,7 @@ func _physics_process(_delta: float):
 	
 	#Sets visibilty of player according to state
 	mesh.visible = !behind_locker
+	collider.disabled = behind_locker # disable the collider too
 	
 	#When to deactivate speed boost
 	if (timer.time_left <= 0 and is_energy_taken):
