@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var SPEED: int = 50
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 @export var mode: int = 0 # 0 = patrol, 1 = chase 
 @export var patrolPoints: Array[Node2D]
@@ -87,8 +88,10 @@ func _physics_process(delta: float) -> void:
 	direction = nav.get_next_path_position() - global_position
 	direction = direction.normalized()
 	
-	# speed is 50
-	velocity = velocity.lerp(direction * 50, 7 * delta)
+	var anget_multiplier = 1
+	if mode == 1:
+		anget_multiplier = 2
+	velocity = velocity.lerp(direction * SPEED * anget_multiplier, 7 * delta)
 	
 	# update the rotation of the field of view
 	field_of_view.look_at(nav.get_next_path_position())
