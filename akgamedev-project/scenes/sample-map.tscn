@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://drgim2vanjs6v"]
+[gd_scene load_steps=9 format=3 uid="uid://drgim2vanjs6v"]
 
 [ext_resource type="Texture2D" uid="uid://b3fhlpo8m0023" path="res://assets/ak-samplemap.png" id="1_3w5fq"]
 [ext_resource type="PackedScene" uid="uid://dxi2244tjrlmj" path="res://scenes/locker.tscn" id="2_bcgkg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmvamgsah4xah" path="res://scenes/energy_drink.tscn" id="4_jea8i"]
 [ext_resource type="PackedScene" uid="uid://bxukokqx3edx8" path="res://scenes/phone.tscn" id="5_e48gy"]
 [ext_resource type="PackedScene" uid="uid://cnu15tnwdljbx" path="res://scenes/teacher.tscn" id="6_624j2"]
+[ext_resource type="Texture2D" uid="uid://c3f6oddhdbjvj" path="res://assets/Teachers_Desk.png" id="7_xfgip"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_85ln7"]
 vertices = PackedVector2Array(396.57, -178.609, 403.469, -36.4219, 271.898, -41.6094, 270.906, -142.32, 296.18, -175.93, 158.5, 56.0078, -47.0391, 72.25, -55.9766, -14.6328, 51.2734, -21, 188.109, -22.0781, 311, 52.7891, 239.156, -10.6172, 434.227, -93, 523.406, -93, 529.578, 55, 494.688, 55, 436.211, -5.70313, 154.867, -52.8594, -45, -50.1328, -45, -178.906, 153.859, -137.68, 186.906, -132.594, 236.813, -144.75, 490.727, 110.469, 311, 100.539, 420.859, 71.5313, 762.539, -158.273, 810.633, -159.711, 824.328, 56.8828, 755.492, -11.0938, 561.828, 54.1016, 648.742, -20.8984, 558.844, -121.672, 652.711, -161.18, 486.727, -164.148, 440.273, -125.711, 428.977, -183.242, 478.75, -205.039, 302.188, -205.953, 421.867, -4.67969, 382.523, 69.5078, 378.508, -1.59375)
@@ -15,6 +16,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-56, 83, 159, 66, 301, 
 [node name="Sample-map" type="Node2D"]
 
 [node name="Ak-samplemap" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(742, 319)
 rotation = 0.275447
 scale = Vector2(4.11613, 4.11613)
@@ -127,3 +129,11 @@ position = Vector2(1138, 219)
 
 [node name="patrolPoint2" type="Node2D" parent="NavigationRegion2D/teacher2"]
 position = Vector2(679, 210)
+
+[node name="TeachersDesk" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(324, 145)
+rotation = 3.14159
+scale = Vector2(1.1875, 1.1875)
+texture = ExtResource("7_xfgip")
+hframes = 4

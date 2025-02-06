@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_taq5r"]
 
 [node name="Menu" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +18,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 0.384003
 offset_bottom = -0.144012
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Panel" parent="SubMenu"]
@@ -77,6 +78,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Buttons" type="VBoxContainer" parent="MainMenu"]

@@ -1,31 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci7cswfccvdhe"]
+[gd_scene load_steps=2 format=3 uid="uid://digc5h1hjqa2v"]
 
-[ext_resource type="Texture2D" uid="uid://b3fhlpo8m0023" path="res://assets/ak-samplemap.png" id="1_ikdpv"]
-[ext_resource type="PackedScene" uid="uid://b6dqy6sr1jt2" path="res://scenes/player.tscn" id="2_6fe7a"]
-[ext_resource type="PackedScene" uid="uid://dmvamgsah4xah" path="res://scenes/energy_drink.tscn" id="3_ls2qa"]
 [ext_resource type="PackedScene" uid="uid://dxi2244tjrlmj" path="res://scenes/locker.tscn" id="4_xipkj"]
-[ext_resource type="PackedScene" uid="uid://bxukokqx3edx8" path="res://scenes/phone.tscn" id="5_pn7ds"]
-[ext_resource type="PackedScene" uid="uid://cnu15tnwdljbx" path="res://scenes/teacher.tscn" id="6_r0lr2"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_velyk"]
-vertices = PackedVector2Array(158.523, 56.0078, 3.49219, 67.5938, 56.6797, -21.0391, 188.109, -22.0781, 311, 52.7891, 239.156, -10.6172, 281.07, -176.039, 307.789, -105.313, 271, -103.5, 271, -142.313, 138.859, -176.938, 236.813, -144.75, 154.813, -81.5938, 127.32, -80.4609, 153.781, -137.688, 186.906, -132.594, 378.508, -1.59375, 382.523, 69.5078, 311, 100.539, 490.719, 110.469, 420.859, 71.5313, 494.758, 53.9375, 421.867, -4.67969, 436.211, -5.70313, 523.453, -93, 530.461, 57.7969, 434.227, -93)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 6, 9, 11), PackedInt32Array(12, 13, 10, 14), PackedInt32Array(14, 10, 11, 15), PackedInt32Array(15, 11, 5, 3), PackedInt32Array(4, 5, 16, 17), PackedInt32Array(18, 4, 17, 19), PackedInt32Array(19, 17, 20), PackedInt32Array(21, 19, 20, 22, 23), PackedInt32Array(24, 25, 21, 23, 26)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-15, 79, 159, 66, 301, 63, 301, 110, 500, 121, 504, 65, 541, 69, 533, -103, 424, -103, 426, -15, 412, -14, 411, 61, 392, 60, 388, -11, 249, -20, 247, -134, 261, -133, 261, -93, 322, -96, 288, -186, 130, -187, 116, -70, 165, -72, 164, -126, 177, -124, 178, -32, 51, -31)])
 
 [node name="Sample-map" type="Node2D"]
-
-[node name="Ak-samplemap" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(742, 319)
-rotation = 0.275447
-scale = Vector2(4.11613, 4.11613)
-texture = ExtResource("1_ikdpv")
-
-[node name="Player" parent="." instance=ExtResource("2_6fe7a")]
-position = Vector2(225, 337)
-
-[node name="EnergyDrink" parent="." instance=ExtResource("3_ls2qa")]
-position = Vector2(231, 297)
 
 [node name="lockers" type="Node" parent="."]
 
@@ -56,25 +33,6 @@ position = Vector2(593, 358)
 [node name="Locker9" parent="lockers" instance=ExtResource("4_xipkj")]
 position = Vector2(541, 359)
 
-[node name="TestMap" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TestMap"]
-position = Vector2(529, 123)
-polygon = PackedVector2Array(2, 65, 5, 156, -240, 160, -239, -12, 103, -7, 108, -43, 330, -39, 333, 1, 661, 6, 661, 46, 651, 47, 651, 16, 577, 17, 569, 159, 491, 153, 490, 15, 323, 11, 319, -28, 116, -32, 112, 3, -229, 0, -230, 150, -6, 146, -8, 65)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TestMap"]
-position = Vector2(529, 123)
-polygon = PackedVector2Array(-228, 271, -228, 282, 117, 262, 117, 310, 340, 316, 343, 263, 678, 268, 671, 121, 661, 121, 666, 259, 377, 253, 374, 76, 259, 73, 247, 20, 237, 21, 242, 165, 88, 159, 86, 56, 76, 55, 77, 169, 218, 175, 222, 246, 232, 246, 235, 172, 254, 172, 250, 83, 364, 86, 367, 253, 332, 252, 330, 309, 128, 303, 127, 250)
-
-[node name="Line2D" type="Line2D" parent="TestMap"]
-points = PackedVector2Array(526, 188, 528, 274, 294, 278, 295, 117, 636, 121, 642, 86, 853, 90, 857, 129, 1025, 133, 1026, 271, 1094, 276, 1101, 135, 1028, 134, 1185, 134, 1185, 169)
-
-[node name="Line2D2" type="Line2D" parent="TestMap"]
-points = PackedVector2Array(301, 400, 651, 379, 651, 427, 863, 433, 866, 381, 1201, 386, 1195, 245)
-
-[node name="Line2D3" type="Line2D" parent="TestMap"]
-points = PackedVector2Array(610, 179, 611, 287, 752, 293, 756, 369, 760, 290, 777, 290, 771, 144, 784, 201, 898, 204, 901, 383)
-
 [node name="SpawnPoints" type="Node2D" parent="."]
 visible = false
 
@@ -89,27 +47,3 @@ position = Vector2(191, 292)
 
 [node name="SP4" type="Node2D" parent="SpawnPoints"]
 position = Vector2(1240, 173)
-
-[node name="Phone" parent="." instance=ExtResource("5_pn7ds")]
-
-[node name="Label" type="Label" parent="."]
-offset_left = 1.0
-offset_top = 18.0
-offset_right = 461.0
-offset_bottom = 41.0
-scale = Vector2(1.5672, 1.5672)
-text = "Im using this map to test teacher movement"
-metadata/_edit_use_anchors_ = true
-
-[node name="Teacher" parent="." instance=ExtResource("6_r0lr2")]
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
-position = Vector2(356, 311)
-navigation_polygon = SubResource("NavigationPolygon_velyk")
-
-[node name="patrolPoint1" type="Node2D" parent="NavigationRegion2D"]
-position = Vector2(111, 10)
-
-[node name="patrolPoint2" type="Node2D" parent="NavigationRegion2D"]
-position = Vector2(474, -68)

@@ -28,3 +28,4 @@ func _on_area_entered(area: Area2D) -> void:
 		player.is_energy_taken = true
 		player.timer.start()
 		self.timer.start()
+		self.queue_free()

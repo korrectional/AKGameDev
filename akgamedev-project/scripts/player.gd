@@ -12,7 +12,7 @@ var phone_collected = false
 var oldPos: Vector2 #For the locker entry and exit
 var collisionInfo #Collision info for a locker
 @onready var locker_instructions: TextEdit = $"TextEdit"	#Textbox for the instructions
-@onready var mesh: MeshInstance2D = $"MeshInstance2D"	#player mesh
+@onready var mesh: Sprite2D = $"PlayerIdle2"	#player "mesh" (changed to sprite but not var name)
 @onready var camera: Camera2D = $"Camera2D"
 @onready var spawnPoints: Node2D = $"../SpawnPoints"
 @onready var collider: CollisionShape2D = $CollisionShape2D
@@ -41,6 +41,7 @@ func _ready() -> void:
 	timer.one_shot = true
 	timer.wait_time = 2.0
 	add_child(timer)
+	
 	
 	#Random spawn points, keep false for development
 	if(false):
@@ -79,7 +80,8 @@ func _physics_process(_delta: float):
 		spaceOn = false
 	
 	#Sets visibilty of player according to state
-	mesh.visible = !behind_locker
+	if !(mesh.visible and !behind_locker):
+		mesh.visible = !behind_locker
 	collider.disabled = behind_locker # disable the collider too
 	
 	#When to deactivate speed boost
