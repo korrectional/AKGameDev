@@ -72,6 +72,14 @@ offset_bottom = 633.0
 theme_override_font_sizes/font_size = 25
 text = "Back"
 
+[node name="Play" type="Button" parent="SubMenu"]
+offset_left = 350.0
+offset_top = 182.0
+offset_right = 810.0
+offset_bottom = 225.0
+theme_override_font_sizes/font_size = 25
+text = "Play"
+
 [node name="MainMenu" type="Control" parent="."]
 visible = false
 layout_mode = 1

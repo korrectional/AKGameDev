@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var SPEED: int = 50
+@export var SPEED: int = 100
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 @export var mode: int = 0 # 0 = patrol, 1 = chase 
 @export var patrolPoints: Array[Node2D]
