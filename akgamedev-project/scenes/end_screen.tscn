@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b86p2xwrubend"]
+
+[node name="EndScreen" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -298.0
+offset_top = -68.0
+offset_right = 296.0
+offset_bottom = 205.0
+theme_override_font_sizes/normal_font_size = 100
+text = "GAME OVER"

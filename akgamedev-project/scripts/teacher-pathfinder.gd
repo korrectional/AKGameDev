@@ -20,6 +20,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var direction = Vector3()
 	
+	
+	
 	# There are two "modes" for the teacher, 0: patroling two or more randomg
 	# checkpoints; 1: chasing the player
 	# when chasing and they cant see the player for 10 seconds teacher 
@@ -60,29 +62,27 @@ func _physics_process(delta: float) -> void:
 
 	# TEACHER IS CHASING
 	if mode == 1:
-		field_of_view_mesh.visible = false
+		#field_of_view_mesh.visible = false		<- Debugging
 		ray_cast_2d.target_position = to_local(player.global_position)
 		ray_cast_2d.force_raycast_update()
 		if ray_cast_2d.is_colliding():
 			var collider = ray_cast_2d.get_collider()
-			if collider:
-				if "Player" in collider.name:
+			if collider && ("Player" in collider.name) && !player.behind_locker:
 					nav.target_position = player.global_position
 					#print("I SEE YOU!!!")
 					visible_player = true
-				else:
-					#print("CANT SEE")
-					visible_player = false
 		else:
-			#print("VISIBLE LOCKER")
-			if visible_player:
-				print("SAW YOU ENTER") # player loses here
-				
-		
-		if !visible_player:
-			calm_down+=delta
+			#print("CANT SEE")
+			visible_player = false
+					
+		if visible_player:
+			calm_down = 0;
+		else:
+			calm_down += 5 * delta;
+			
 		if calm_down >= 10:
-			mode = 0	
+			mode = 0;
+			calm_down = 10;
 			
 	
 	direction = nav.get_next_path_position() - global_position
@@ -90,7 +90,7 @@ func _physics_process(delta: float) -> void:
 	
 	var anget_multiplier = 1
 	if mode == 1:
-		anget_multiplier = 2
+		anget_multiplier = 1.5
 	velocity = velocity.lerp(direction * SPEED * anget_multiplier, 7 * delta)
 	
 	# update the rotation of the field of view

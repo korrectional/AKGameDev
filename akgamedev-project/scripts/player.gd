@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var acceleration = 0.2
 var speed = SPEED # Speed with modifiers
 var speedMultiplier = 1.0;
-var behind_locker = false
+@export var behind_locker = false
 var spaceOn = false # To prevent someone holding space and jumping in and out of a locker
 var is_energy_taken = false # If consumed drink
 var phone_collected = false

@@ -51,12 +51,6 @@ offset_bottom = -21.0
 show_percentage = false
 script = ExtResource("2_twibt")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = -54.0
-offset_top = -31.0
-offset_right = 54.0
-offset_bottom = -21.0
-
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 modulate = Color(0.0941176, 0.0941176, 0.0941176, 0.00784314)
 scale = Vector2(16, 20)

@@ -13,7 +13,7 @@ position = Vector2(487, 334)
 script = ExtResource("1_ay0bh")
 patrolPoints = [null, null]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="TeacherCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_f2faj")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
@@ -28,16 +28,16 @@ debug_enabled = true
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="FieldOfView"]
 modulate = Color(0.594376, 0.23006, 0.268869, 0.411765)
-position = Vector2(9.53674e-07, -81.6051)
-scale = Vector2(186.696, 165.715)
+position = Vector2(-0.500012, -71.5)
+scale = Vector2(117, 139)
 mesh = SubResource("PrismMesh_mh1px")
 
 [node name="Area2D" type="Area2D" parent="FieldOfView"]
-position = Vector2(0, -81.6051)
+position = Vector2(-2.00003, -79.6051)
 scale = Vector2(186.696, 165.715)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FieldOfView/Area2D"]
 z_index = -1
-polygon = PackedVector2Array(0, 0.486408, -0.498136, -0.497208, 0.49278, -0.497208)
+polygon = PackedVector2Array(0.0107126, 0.468305, -0.305309, -0.382554, 0.316022, -0.382554)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
