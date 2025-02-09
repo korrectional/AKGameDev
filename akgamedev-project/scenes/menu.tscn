@@ -73,6 +73,7 @@ theme_override_font_sizes/font_size = 25
 text = "Back"
 
 [node name="Play" type="Button" parent="SubMenu"]
+layout_mode = 0
 offset_left = 350.0
 offset_top = 182.0
 offset_right = 810.0

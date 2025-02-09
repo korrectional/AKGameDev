@@ -12,22 +12,18 @@ var visible_player = false
 var calm_down = 0
 var current = 0
 var currentMax
-var point_light: PointLight2D
+@onready var point_light: PointLight2D = $FieldOfView/PointLight2D
 @onready var field_of_view_mesh: MeshInstance2D = $FieldOfView/MeshInstance2D
 
 func _ready() -> void:
 	currentMax = patrolPoints.size() - 1
-	point_light = PointLight2D.new()
-	point_light.texture = preload("res://assets/Light.png")
-	point_light.energy = 1.5
+	point_light.energy = 0.3
 	point_light.shadow_enabled = true
 	point_light.z_index = 2
-	field_of_view.add_child(point_light)
+	#field_of_view.add_child(point_light)
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector3()
-	if point_light:
-		point_light.global_position = field_of_view.global_position
 	
 	
 	# There are two "modes" for the teacher, 0: patroling two or more randomg
@@ -39,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	
 	# TEACHER IS PATROLING
 	if mode == 0:
-		field_of_view_mesh.visible = true
+		#field_of_view_mesh.visible = true
 		nav.target_position = patrolPoints[current].global_position
 		if global_position.distance_to(patrolPoints[current].global_position) <= 10:
 			current+=1

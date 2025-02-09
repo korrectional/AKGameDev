@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://drgim2vanjs6v"]
+[gd_scene load_steps=14 format=3 uid="uid://drgim2vanjs6v"]
 
 [ext_resource type="Texture2D" uid="uid://b3fhlpo8m0023" path="res://assets/ak-samplemap.png" id="1_3w5fq"]
 [ext_resource type="PackedScene" uid="uid://dxi2244tjrlmj" path="res://scenes/locker.tscn" id="2_bcgkg"]
@@ -22,6 +22,8 @@ polygon = PackedVector2Array(604, 179, 615, 179, 616, 283, 754, 288, 755, 285, 7
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_soal6"]
 load_path = "res://.godot/imported/Red_triangle.svg.png-64f8ca4bbf77cc6c6f88de1de6893048.ctex"
+
+[sub_resource type="BoxMesh" id="BoxMesh_62flv"]
 
 [node name="Sample-map" type="Node2D"]
 
@@ -122,6 +124,7 @@ patrolPoints = [NodePath("../NavigationRegion2D/teacher2/patrolPoint1"), NodePat
 patrolPoints = [NodePath("../NavigationRegion2D/teacher1/patrolPoint1"), NodePath("../NavigationRegion2D/teacher1/patrolPoint2")]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 position = Vector2(356, 311)
 navigation_polygon = SubResource("NavigationPolygon_85ln7")
 
@@ -164,3 +167,10 @@ texture = SubResource("CompressedTexture2D_soal6")
 position = Vector2(-172.034, -95.1344)
 scale = Vector2(-7.33645e-05, -0.000460335)
 texture = ExtResource("8_dqht8")
+
+[node name="floor" type="MeshInstance2D" parent="."]
+modulate = Color(0.515499, 0.536752, 0.510947, 1)
+z_index = -1
+position = Vector2(750, 266)
+scale = Vector2(954, 400)
+mesh = SubResource("BoxMesh_62flv")
