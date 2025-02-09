@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drgim2vanjs6v"]
+[gd_scene load_steps=13 format=3 uid="uid://drgim2vanjs6v"]
 
 [ext_resource type="Texture2D" uid="uid://b3fhlpo8m0023" path="res://assets/ak-samplemap.png" id="1_3w5fq"]
 [ext_resource type="PackedScene" uid="uid://dxi2244tjrlmj" path="res://scenes/locker.tscn" id="2_bcgkg"]
@@ -7,11 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://bxukokqx3edx8" path="res://scenes/phone.tscn" id="5_e48gy"]
 [ext_resource type="PackedScene" uid="uid://cnu15tnwdljbx" path="res://scenes/teacher.tscn" id="6_624j2"]
 [ext_resource type="Texture2D" uid="uid://c3f6oddhdbjvj" path="res://assets/Teachers_Desk.png" id="7_xfgip"]
+[ext_resource type="Texture2D" uid="uid://dbog74bi4xbv7" path="res://assets/Light.png" id="8_dqht8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_85ln7"]
 vertices = PackedVector2Array(396.57, -178.609, 403.469, -36.4219, 271.898, -41.6094, 270.906, -142.32, 296.18, -175.93, 158.469, 56.0078, -46.9375, 73.3203, -55.9766, -14.6328, 51.2734, -21, 188.109, -22.0781, 311, 52.7891, 239.156, -10.6172, 434.227, -93, 523.406, -93, 529.578, 55, 494.688, 55, 436.211, -5.70313, 154.867, -52.8594, -45, -50.1328, -45, -178.906, 153.859, -137.68, 186.906, -132.594, 236.813, -144.75, 490.727, 110.469, 311, 100.539, 420.859, 71.5313, 762.539, -158.273, 810.633, -159.711, 824.328, 56.8828, 755.492, -11.0938, 561.828, 54.1016, 648.742, -20.8984, 558.844, -121.672, 652.711, -161.18, 486.727, -164.148, 440.273, -125.711, 428.977, -183.242, 478.75, -205.039, 302.188, -205.953, 421.867, -4.67969, 382.523, 69.5078, 378.508, -1.59375)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 5, 9, 11), PackedInt32Array(12, 13, 14, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 20, 19, 4, 22), PackedInt32Array(15, 23, 24, 25), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(29, 28, 30, 31), PackedInt32Array(31, 30, 32, 33), PackedInt32Array(34, 33, 32, 35), PackedInt32Array(34, 35, 36, 37), PackedInt32Array(38, 37, 36, 0, 4), PackedInt32Array(25, 39, 16, 15), PackedInt32Array(40, 25, 24), PackedInt32Array(40, 24, 10, 41), PackedInt32Array(11, 41, 10), PackedInt32Array(22, 11, 9, 21), PackedInt32Array(4, 3, 22)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-56, 83, -102, 88, 159, 66, 301, 63, 301, 110, 500, 121, 504, 65, 540, 65, 533, -103, 424, -103, 426, -15, 412, -14, 411, 61, 392, 60, 388, -11, 249, -20, 247, -134, 261, -133, 262, -32, 414, -26, 407, -170, 421, -172, 432, -116, 549, -112, 552, 64, 835, 67, 820, -170, 753, -168, 746, -22, 659, -30, 663, -171, 495, -174, 487, -215, 294, -216, 288, -186, -55, -189, -55, -40, 165, -43, 164, -126, 177, -124, 178, -32, 51, -31, -67, -24)])
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7tle4"]
+polygon = PackedVector2Array(524, 190, 533, 190, 535, 280, 291, 285, 293, 115, 633, 117, 640, 81, 859, 87, 863, 124, 1191, 131, 1192, 170, 1182, 170, 1180, 141, 1108, 142, 1100, 283, 1024, 278, 1022, 139, 855, 135, 849, 96, 650, 92, 643, 126, 302, 124, 302, 271, 523, 270)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_867fo"]
+polygon = PackedVector2Array(604, 179, 615, 179, 616, 283, 754, 288, 755, 285, 771, 285, 766, 144, 775, 142, 788, 194, 902, 199, 906, 376, 1194, 381, 1191, 244, 1199, 244, 1206, 389, 871, 387, 867, 437, 647, 432, 646, 386, 302, 408, 301, 394, 655, 374, 657, 421, 858, 427, 862, 375, 895, 376, 892, 208, 778, 208, 782, 294, 765, 294, 762, 368, 751, 369, 747, 296, 606, 291)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_soal6"]
+load_path = "res://.godot/imported/Red_triangle.svg.png-64f8ca4bbf77cc6c6f88de1de6893048.ctex"
 
 [node name="Sample-map" type="Node2D"]
 
@@ -69,7 +79,8 @@ position = Vector2(529, 123)
 polygon = PackedVector2Array(-228, 271, -228, 282, 117, 262, 117, 310, 340, 316, 343, 263, 678, 268, 671, 121, 661, 121, 666, 259, 377, 253, 374, 76, 259, 73, 247, 20, 237, 21, 242, 165, 88, 159, 86, 56, 76, 55, 77, 169, 218, 175, 222, 246, 232, 246, 235, 172, 254, 172, 250, 83, 364, 86, 367, 253, 332, 252, 330, 309, 128, 303, 127, 250)
 
 [node name="Line2D" type="Line2D" parent="TestMap"]
-points = PackedVector2Array(526, 188, 528, 274, 294, 278, 295, 117, 636, 121, 642, 86, 853, 90, 857, 129, 1025, 133, 1026, 271, 1094, 276, 1101, 135, 1028, 134, 1185, 134, 1185, 169)
+position = Vector2(2, 2)
+points = PackedVector2Array(526, 188, 528, 274, 294, 278, 295, 248, 295, 117, 636, 121, 642, 86, 853, 90, 857, 129, 1025, 133, 1026, 271, 1094, 276, 1101, 135, 1028, 134, 1185, 134, 1185, 169)
 
 [node name="Line2D2" type="Line2D" parent="TestMap"]
 points = PackedVector2Array(301, 400, 651, 379, 651, 427, 863, 433, 866, 381, 1201, 386, 1195, 245)
@@ -137,3 +148,19 @@ rotation = 3.14159
 scale = Vector2(1.1875, 1.1875)
 texture = ExtResource("7_xfgip")
 hframes = 4
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_7tle4")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_867fo")
+
+[node name="RedTriangle_svg" type="Sprite2D" parent="."]
+position = Vector2(4.80625, -269.705)
+scale = Vector2(-0.000605469, -0.000721211)
+texture = SubResource("CompressedTexture2D_soal6")
+
+[node name="Light" type="Sprite2D" parent="."]
+position = Vector2(-172.034, -95.1344)
+scale = Vector2(-7.33645e-05, -0.000460335)
+texture = ExtResource("8_dqht8")
