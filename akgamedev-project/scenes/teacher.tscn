@@ -21,7 +21,6 @@ scale = Vector2(20.0227, 20)
 mesh = SubResource("SphereMesh_2kgud")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="FieldOfView" type="Node2D" parent="."]
 
