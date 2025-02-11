@@ -13,7 +13,6 @@ var calm_down = 0
 var current = 0
 var currentMax
 @onready var point_light: PointLight2D = $FieldOfView/PointLight2D
-@onready var field_of_view_mesh: MeshInstance2D = $FieldOfView/MeshInstance2D
 
 func _ready() -> void:
 	currentMax = patrolPoints.size() - 1
