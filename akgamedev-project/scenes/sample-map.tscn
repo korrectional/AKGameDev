@@ -135,31 +135,31 @@ position = Vector2(231, 297)
 [node name="lockers" type="Node" parent="."]
 
 [node name="Locker" parent="lockers" instance=ExtResource("2_bcgkg")]
-position = Vector2(397, 147)
+position = Vector2(392, 123)
 
 [node name="Locker2" parent="lockers" instance=ExtResource("2_bcgkg")]
-position = Vector2(659, 111)
+position = Vector2(666, 98)
 
 [node name="Locker3" parent="lockers" instance=ExtResource("2_bcgkg")]
-position = Vector2(792, 161)
+position = Vector2(788, 102)
 
 [node name="Locker4" parent="lockers" instance=ExtResource("2_bcgkg")]
-position = Vector2(917, 322)
+position = Vector2(922, 293)
 
 [node name="Locker5" parent="lockers" instance=ExtResource("2_bcgkg")]
-position = Vector2(1012, 255)
+position = Vector2(1000, 269)
 
 [node name="Locker6" parent="lockers" instance=ExtResource("2_bcgkg")]
-position = Vector2(1109, 160)
+position = Vector2(1114, 215)
 
 [node name="Locker7" parent="lockers" instance=ExtResource("2_bcgkg")]
-position = Vector2(393, 371)
+position = Vector2(402, 291)
 
 [node name="Locker8" parent="lockers" instance=ExtResource("2_bcgkg")]
-position = Vector2(593, 358)
+position = Vector2(701, 292)
 
 [node name="Locker9" parent="lockers" instance=ExtResource("2_bcgkg")]
-position = Vector2(541, 359)
+position = Vector2(793, 268)
 
 [node name="TestMap" type="StaticBody2D" parent="."]
 
@@ -197,6 +197,7 @@ patrolPoints = [NodePath("../NavigationRegion2D/teacher2/patrolPoint1"), NodePat
 patrolPoints = [NodePath("../NavigationRegion2D/teacher1/patrolPoint1"), NodePath("../NavigationRegion2D/teacher1/patrolPoint2")]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 position = Vector2(356, 311)
 navigation_polygon = SubResource("NavigationPolygon_85ln7")
 
@@ -218,7 +219,7 @@ position = Vector2(679, 210)
 
 [node name="TeachersDesk" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(324, 145)
+position = Vector2(318, 148)
 rotation = 3.14159
 scale = Vector2(1.1875, 1.1875)
 texture = ExtResource("7_xfgip")
