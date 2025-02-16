@@ -1,21 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmvamgsah4xah"]
 
 [ext_resource type="Script" path="res://scripts/energy_drink.gd" id="1_cdaqn"]
-[ext_resource type="Texture2D" uid="uid://co5ukjsm8l8ga" path="res://assets/orange_prototype.png" id="2_4ogco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvjo1"]
 size = Vector2(49, 82)
+
+[sub_resource type="BoxMesh" id="BoxMesh_md1fv"]
 
 [node name="EnergyDrink" type="Area2D"]
 scale = Vector2(0.165869, 0.199961)
 script = ExtResource("1_cdaqn")
 
-[node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.0804197, 0.151246)
-texture = ExtResource("2_4ogco")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_rvjo1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.787003, 0.523487, 9.62615e-07, 1)
+scale = Vector2(48.2308, 80.0156)
+mesh = SubResource("BoxMesh_md1fv")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

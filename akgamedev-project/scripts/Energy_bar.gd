@@ -2,7 +2,7 @@ extends ProgressBar
 
 @onready var player = $".."
 
-#Sets the value of the progress bar
+# Sets the value of the progress bar
 func _process(_delta: float) -> void:
 	if (self.value <= 0):
 		self.visible = false;

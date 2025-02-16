@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnu15tnwdljbx"]
+
+[ext_resource type="Script" path="res://scripts/teacher-pathfinder.gd" id="1_ay0bh"]
+[ext_resource type="Texture2D" uid="uid://dbog74bi4xbv7" path="res://assets/Light.png" id="2_woj0b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f2faj"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2kgud"]
+
+[node name="Teacher" type="CharacterBody2D" node_paths=PackedStringArray("patrolPoints")]
+position = Vector2(487, 334)
+script = ExtResource("1_ay0bh")
+patrolPoints = [null, null]
+
+[node name="TeacherCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f2faj")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(0, 2.74181e-06)
+scale = Vector2(20.0227, 20)
+mesh = SubResource("SphereMesh_2kgud")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="FieldOfView" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="FieldOfView"]
+position = Vector2(-1, -1)
+rotation = -1.57079
+scale = Vector2(0.171507, 0.211307)
+texture = ExtResource("2_woj0b")
+offset = Vector2(465, 0)
+
+[node name="Area2D" type="Area2D" parent="FieldOfView"]
+position = Vector2(-2.00003, -79.6051)
+scale = Vector2(186.696, 165.715)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FieldOfView/Area2D"]
+z_index = -1
+polygon = PackedVector2Array(0.0107126, 0.468305, -0.21863, -0.14918, -0.305309, -0.382554, 0.316022, -0.382554)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
