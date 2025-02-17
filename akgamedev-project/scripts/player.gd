@@ -71,7 +71,8 @@ func _physics_process(_delta: float):
 		var object = get_slide_collision(i)
 		if "Teacher" in object.get_collider().name:
 			print("Player collided with teacher - died (player.gd script)")
-	
+			get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
+
 	# Functionality for entering and exiting a locker
 	if (Input.is_action_pressed("interact") and !spaceOn and near_locker):
 		spaceOn = true
