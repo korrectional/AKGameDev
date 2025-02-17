@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bdugbw0so2r6q" path="res://assets/player_idle_1.png" id="4_gv1f4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qnsw"]
-size = Vector2(16, 20)
+size = Vector2(20, 24)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7ob5g"]
 

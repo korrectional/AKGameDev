@@ -66,6 +66,12 @@ func _physics_process(_delta: float):
 		
 	move_and_slide() # this is a command to apply physics
 	
+	# getting colliding objects, if teacher then die
+	for i in range(get_slide_collision_count()):
+		var object = get_slide_collision(i)
+		if "Teacher" in object.get_collider().name:
+			print("Player collided with teacher - died (player.gd script)")
+	
 	# Functionality for entering and exiting a locker
 	if (Input.is_action_pressed("interact") and !spaceOn and near_locker):
 		spaceOn = true

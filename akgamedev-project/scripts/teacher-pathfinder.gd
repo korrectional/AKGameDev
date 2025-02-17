@@ -72,10 +72,14 @@ func _physics_process(delta: float) -> void:
 			var collider = ray_cast_2d.get_collider()
 			if collider && ("Player" in collider.name) && !player.behind_locker:
 					nav.target_position = player.global_position
-					#print("I SEE YOU!!!")
+					#teacher sees player
 					visible_player = true
 		else:
-			#print("CANT SEE")
+			# check if just entered locker in front of teacher
+			if visible_player and player.behind_locker:
+				print("Just entered locker in front of teacher, death")
+			
+			#teacher cant see
 			visible_player = false
 					
 		if visible_player:
