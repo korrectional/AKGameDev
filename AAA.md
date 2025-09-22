@@ -1,3 +1,10 @@
+## 2025/26
+Yo!!! You went to the wrong place. Come talk to me (David) if you're a real AAA and I'll tell you what we're doing.
+
+
+
+
+## 2024/25
 Heeeeee yeaaaa you're smart. Now, its awesome that you are a pro and all, but you gotta prove yourself.
 Complete challenges and jams!!!!!!
 
